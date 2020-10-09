@@ -12,3 +12,12 @@ header div {
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (min-width: 1024px) {
+  header {
+    width: 40%;
+    margin-top: 240px;
+    margin-left: 1.5em;
+    margin-right: 3em;
+  }
+}
