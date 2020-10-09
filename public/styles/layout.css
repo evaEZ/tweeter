@@ -18,8 +18,86 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: Source Sans Pro, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+main{
+  width: 90%;
+  background-color: #f4f1ec;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+ }
+
+section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error1, .error2{
+  border: 2px solid;
+  margin: 10px 0px;
+  padding: 15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #D8000C;
+  background-image: url('https://i.imgur.com/GnyDvKN.png');
+}
+
+#tweets-container{
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 1em;
+}
+
+div.hide {
+  visibility: hidden;
+}
+
+article {
+  margin-top: 2em;
+  border: 2px solid;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 1em;
+}
+
+article.tweet:hover .hide {
+  visibility: visible;
+}
+
+article.tweet header {
+  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  margin-top: 0px;
+}
+
+article.tweet header img{
+  height: 3em;
+  width: auto;
+}
+
+article.tweet p {
+  padding-bottom: 1.5em;
+  border-bottom: 2px solid;
+}
+
+article.tweet footer {
+  font-size: medium;
+}
