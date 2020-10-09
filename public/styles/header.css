@@ -1,0 +1,14 @@
+header {
+  height: 400px;
+  width: 100%;
+  background: #ebcb2c;
+  display: flex;
+  flex-direction: column;
+  margin-top: 120px;
+}
+
+header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
