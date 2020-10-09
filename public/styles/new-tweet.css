@@ -1,0 +1,32 @@
+form {
+ display: flex;
+ flex-direction: column;
+}
+
+tweet-text {
+  border-bottom: 5px solid;
+}
+
+button {
+ background-color: #4056A1;
+ border: none;
+ color: #ffffff;
+ padding: 0.3em 0.5em;
+ text-align: center;
+ text-decoration: none;
+}
+
+form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font: bungee bold;
+  margin-top: 0.5em;
+  font-family: Bungee, sans-serif;
+}
+
+textarea {
+  border: none;
+  border-bottom: 2px solid;
+  background-color: #f4f1ec;
+}
