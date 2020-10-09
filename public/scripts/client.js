@@ -40,7 +40,7 @@ jQuery(document).ready(function(){
       const $tweet = createTweetElement(tweets[element]);
       $('#tweets-container').append($tweet);
     }
-  }
+  };
 
   const createTweetElement = function(tweet) {
     const d = new Date();
@@ -70,9 +70,8 @@ jQuery(document).ready(function(){
     <p>${tweet.content.text}</p>
     <footer>${t}</footer>
     </article>`;
-    //${tweet.created_at}
     return $tweet;
-  }
+  };
 
 //renderTweets(data);
 
@@ -87,13 +86,15 @@ $("form").submit(function(event){
     //alert("the tweet content is too long");
     $(".error2").show();
   } else {
-  $.ajax({
-    url:  "/tweets/",
-    method: 'POST',
-    data: str
-  })
+    $.ajax({
+      url:  "/tweets/",
+      method: 'POST',
+      data: str
+    })
     .then(()=>{
-      console.log("AJAX");
+      //console.log("AJAX");
+      $("textarea").val('');
+      $("output").val('140');
       loadTweets();
     });
   }
@@ -106,10 +107,8 @@ const loadTweets = function(){
     renderTweets(res);
     $(".error1").hide();
     $(".error2").hide();
-  }
-
-  );
-}
+  });
+};
 
 loadTweets();
 
