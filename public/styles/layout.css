@@ -86,6 +86,7 @@ article.tweet header {
   height: 100px;
   width: 100%;
   margin-top: 0px;
+  margin-left: 0em;
 }
 
 article.tweet header img{
@@ -100,6 +101,9 @@ article.tweet p {
 
 article.tweet footer {
   font-size: medium;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 1024px) {
