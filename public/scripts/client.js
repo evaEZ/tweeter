@@ -33,9 +33,10 @@ jQuery(document).ready(function(){
   ]
 
   const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
+    /**loops through tweets
+    calls createTweetElement for each tweet
+    takes return value and appends it to the tweets container 
+    */
     for(let element in tweets) {
       const $tweet = createTweetElement(tweets[element]);
       $('#tweets-container').append($tweet);
@@ -43,12 +44,12 @@ jQuery(document).ready(function(){
   };
 
   const createTweetElement = function(tweet) {
-    const d = new Date();
-    const current = d.valueOf();
-    console.log(d + current);
+    const current = Date.now();
+    console.log("current time: " + current);
     const created = tweet.created_at;
     console.log(tweet.created_at);
-    const time = Math.round((current - created)/1000000);
+    const time = Math.round((current - created)/1000);
+    console.log(time);
     let t;
     if(time < 60){
       t = time + " Seconds";
@@ -68,22 +69,25 @@ jQuery(document).ready(function(){
       <div class="hide">${tweet.user.handle}</div>
     </header>
     <p>${tweet.content.text}</p>
-    <footer>${t}</footer>
+    <footer>
+      <div>${t}</div>
+      <div>
+        <i class="fas fa-flag"></i>
+        <i class="fas fa-retweet"></i>
+        <i class="fas fa-heart"></i>
+      </div>
+    </footer>
     </article>`;
     return $tweet;
   };
-
-//renderTweets(data);
 
 $("form").submit(function(event){
   event.preventDefault();
   const str = $("form").serialize();
   const charaters = str.length-5;
   if(charaters === 0){
-    //alert("the tweet content is not present");
     $(".error1").show();
   } else if(charaters > 140){
-    //alert("the tweet content is too long");
     $(".error2").show();
   } else {
     $.ajax({
@@ -92,7 +96,6 @@ $("form").submit(function(event){
       data: str
     })
     .then(()=>{
-      //console.log("AJAX");
       $("textarea").val('');
       $("output").val('140');
       loadTweets();
@@ -100,7 +103,6 @@ $("form").submit(function(event){
   }
 });
 
-//fetch tweets from the http://localhose:8080/tweets page
 const loadTweets = function(){
  $.ajax('/tweets', {method: 'GET'})
   .then((res)=>{
