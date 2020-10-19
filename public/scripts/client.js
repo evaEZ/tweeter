@@ -43,14 +43,8 @@ jQuery(document).ready(function(){
     }
   };
 
-  const createTweetElement = function(tweet) {
-    const current = Date.now();
-    //console.log("current time: " + current);
-    const created = tweet.created_at;
-    //console.log(tweet.created_at);
-    const time = Math.round((current - created)/1000);
-    //console.log(time);
-    let t;
+
+  const getTime = function (time){
     if(time < 60){
       t = time + " Seconds";
     } else if (time >= 60 && time <3600)  {
@@ -60,6 +54,14 @@ jQuery(document).ready(function(){
     } else {
       t = Math.round(time/86400) + " Days";
     }
+    return t;
+  };
+
+  const createTweetElement = function(tweet) {
+    const current = Date.now();
+    const created = tweet.created_at;
+    const time = Math.round((current - created)/1000);
+   const t = getTime(time);
     let $tweet = `<article class ="tweet">
     <header>
       <div>
