@@ -45,11 +45,11 @@ jQuery(document).ready(function(){
 
   const createTweetElement = function(tweet) {
     const current = Date.now();
-    console.log("current time: " + current);
+    //console.log("current time: " + current);
     const created = tweet.created_at;
-    console.log(tweet.created_at);
+    //console.log(tweet.created_at);
     const time = Math.round((current - created)/1000);
-    console.log(time);
+    //console.log(time);
     let t;
     if(time < 60){
       t = time + " Seconds";
