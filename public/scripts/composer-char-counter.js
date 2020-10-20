@@ -3,7 +3,7 @@ $(document).ready(function() {
   let str = 0;
   $('textarea').keyup(function(e){
     const pCount = $(this).parent().find('.counter').text();
-    const str1 = $(this).val()
+    const str1 = $(this).val();
     str = str1.length - (140 - pCount);
     let count = $(this).parent().find('.counter').text();
     const remain = count - str;
