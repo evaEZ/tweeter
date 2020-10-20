@@ -15,3 +15,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshot
+!["Screenshot of Tweeter page"](https://github.com/evaEZ/tweeter/blob/master/doc/Tweeter.png)
+!["Screenshot of New Tweet Created page"](https://github.com/evaEZ/tweeter/blob/master/doc/Created%20new%20Tweet.png)
+!["Screenshot of Tweeter page with error message"](https://github.com/evaEZ/tweeter/blob/master/doc/Error%20message.png)
+!["Screenshot of Tweeter page - Responsive Design"](https://github.com/evaEZ/tweeter/blob/master/doc/Reponsive%20Design.png)
